@@ -1,5 +1,5 @@
 {
-  "name": "SrcMapUnminify",
+  "name": "srcify",
   "version": "0.0.1",
   "description": "Un-maps minified source from source maps",
   "keywords": [
