@@ -1,0 +1,23 @@
+{
+  "name": "SrcMapUnminify",
+  "version": "0.0.1",
+  "description": "Un-maps minified source from source maps",
+  "keywords": [
+    "source-map",
+    "connect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Someone",
+  "dependencies": {
+    "source-map": "*",
+    "request": "*",
+    "async": "*"
+  },
+  "main": "index",
+  "engines": {
+    "node": ">= 0.8.0"
+  }
+}
