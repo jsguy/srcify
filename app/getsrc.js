@@ -3,11 +3,11 @@ var request = require('request'),
 	sourceMap = require('source-map');
 
 module.exports = function(lookup, callback){
-	var srcMapKey = "sourceMappingURL",
-		srcMapCommentStart = "//#",
+	var srcMapKey = lookup.srcMapKey || "sourceMappingURL",
+		srcMapCommentStart = lookup.srcMapCommentStart || "//#",
+		linesBefore = lookup.linesBefore || 3,
+		linesAfter = lookup.linesAfter || 5,
 		baseUrl = lookup.url.substr(0, lookup.url.lastIndexOf("/")),
-		linesBefore = 3,
-		linesAfter = 5,
 		errMsg = {
 			0: "Unknown error",
 			404: "Not found",
