@@ -1,10 +1,16 @@
 var getsrc = require('./getsrc.js');
 
 //	Test lookup
+// var lookup = {
+// 	url: "http://jsguy.com/labs/srcify/jquery-1.11.0.min.js",
+// 	line: 3,
+// 	column: 26
+// };
+
 var lookup = {
-	url: "http://jsguy.com/labs/srcify/jquery-1.11.0.min.js",
-	line: 3,
-	column: 26
+	url: "http://192.168.7.207/projects/srcify/test/dist/scrifytest.min.js",
+	line: 6,
+	column: 6
 };
 
 //	Grab the src

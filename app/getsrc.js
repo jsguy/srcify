@@ -5,6 +5,7 @@ var request = require('request'),
 module.exports = function(lookup, callback){
 	var srcMapKey = "sourceMappingURL",
 		srcMapCommentStart = "//#",
+		baseUrl = lookup.url.substr(0, lookup.url.lastIndexOf("/")),
 		linesBefore = 3,
 		linesAfter = 5,
 		errMsg = {
@@ -38,6 +39,11 @@ module.exports = function(lookup, callback){
 			if(lastComment && lastComment.indexOf(srcMapKey) != -1) {
 				var srcMapUrl = lastComment.substr(lastComment.indexOf(srcMapKey) + srcMapKey.length + 1);
 
+				//	Add the base URL if we need to
+				if(srcMapUrl.indexOf('http') == -1) {
+					srcMapUrl = baseUrl + "/" + srcMapUrl;
+				}
+
 				if(srcMapUrl) {
 					request(srcMapUrl, function (error, response, srcMapResult) {
 						if (!error && response.statusCode == 200 && srcMapResult) {
@@ -60,6 +66,12 @@ module.exports = function(lookup, callback){
 			//	Grab the code
 			if(pos) {
 				var url = (srcMapResult.sourceRoot? srcMapResult.sourceRoot: "") + pos.source;
+
+				//	Add the base URL if we need to.
+				if(url.indexOf('http') == -1) {
+					url = baseUrl + "/" + url;
+				}
+
 				request(url, function (error, response, srcCode) {
 					if (!error && response.statusCode == 200 && srcCode) {
 						cb(null, pos, srcCode)
