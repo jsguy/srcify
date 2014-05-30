@@ -1,4 +1,6 @@
-/*  This gruntfile is just to concat and uglify the test code - not a proper build file */
+/*  
+	Note: This gruntfile is just to concat and uglify the test code - not a "proper" build file 
+*/
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
