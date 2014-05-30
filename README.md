@@ -21,7 +21,26 @@ For example:
 
 By default you get the 3 lines before and 4 lines after the error line, here is the code output from above:
 	
-	{ line: 14607, code: '\t\t\tdayNamesShort = (settings ? settings.dayNamesShort : null) || this._defaults.dayNamesShort,', errorLine: true }
+	Grabbing file: http://localhost/projects/srcify/test/dist/scrifytest.min.js
+	--- Result ---
+	[ { line: 14604, code: '\t\t}', errorLine: false },
+	  { line: 14605, code: '', errorLine: false },
+	  { line: 14606, code: '\t\tvar iFormat,', errorLine: false },
+	  { line: 14607,
+	    code: '\t\t\tdayNamesShort = (settings ? settings.dayNamesShort : null) || this._defaults.dayNamesShort,',
+	    errorLine: true },
+	  { line: 14608,
+	    code: '\t\t\tdayNames = (settings ? settings.dayNames : null) || this._defaults.dayNames,',
+	    errorLine: false },
+	  { line: 14609,
+	    code: '\t\t\tmonthNamesShort = (settings ? settings.monthNamesShort : null) || this._defaults.monthNamesShort,',
+	    errorLine: false },
+	  { line: 14610,
+	    code: '\t\t\tmonthNames = (settings ? settings.monthNames : null) || this._defaults.monthNames,',
+	    errorLine: false },
+	  { line: 14611,
+	    code: '\t\t\t// Check whether a format character is doubled',
+	    errorLine: false } ]
 
 So you have:
 
