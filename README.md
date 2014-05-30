@@ -21,8 +21,6 @@ For example:
 
 By default you get the 3 lines before and 4 lines after the error line, here is the code output from above:
 	
-	Grabbing file: http://localhost/projects/srcify/test/dist/scrifytest.min.js
-	--- Result ---
 	[ { line: 14604, code: '\t\t}', errorLine: false },
 	  { line: 14605, code: '', errorLine: false },
 	  { line: 14606, code: '\t\tvar iFormat,', errorLine: false },
@@ -42,7 +40,7 @@ By default you get the 3 lines before and 4 lines after the error line, here is 
 	    code: '\t\t\t// Check whether a format character is doubled',
 	    errorLine: false } ]
 
-So you have:
+So for each object you have:
 
 	{ 
 		line: What line it happened on
@@ -50,6 +48,7 @@ So you have:
 		errorLine: true if this is the line the error occued on
 	}
 
+In this example, the error was on line 14607, as errorLine is true.
 
 ## Options
 
